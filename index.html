@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interest Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Interest Calculator">
+  <meta name="author" content="GurdalT">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Interest Calculator</h1>
+    <h2>September, 24 2015</h2>
+    <p>GurdalT<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is an RStudio shiny application developed as a course project for Coursera&#39;s Developing Data Products course in the Data Science Specialization track.
+The application developed is a simple interest calculator.</p>
+
+<h1>Course project requirements</h1>
+
+<p>The course project requirements for this application are:</p>
+
+<p>Some form of input (widget: textbox, radio button, checkbox, …)
+Some operation on the ui input in sever.R
+Some reactive output displayed as a result of server calculations
+You must also include enough documentation so that a novice user could use your application.
+The documentation should be at the Shiny website itself. Do not post to an external link.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application - Widgets</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The shiny application for this project is a simple interest calculator.
+It includes 4 widgets:</p>
+
+<ul>
+<li>numericInput - A field to enter numbers, in this case - the principal amount (in $)</li>
+<li>sliderInput - A slider bar
+
+<ul>
+<li>First slider is to choose the yearly interest rate (in %)</li>
+<li>Second slider is to choose the number of time periods</li>
+</ul></li>
+<li>selectInput - A box with choices to select from, in this case - the type of time  - period: years, quarters or months</li>
+<li>actionButton - An Action Button, in this case to provide non-reactive reactivity to refresh and calculate</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application - Operations and Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To prevent undue distraction, the reactivity of the shiny application widgets is controlled by using an actionButton. Based on user inputs, and using the simple interest calculation equation;</p>
+
+<p>A = P + I = P(1 + rt) ; R = r * 100
+where:
+A = Total amount (Principal + Interest), P = Principal amount, I = Interest amount, r = Rate of interest per year, in decimal; r=R/100, t = Time period invested in years/quarters/months</p>
+
+<p>An example calculation in R is given here for 2% interest per year for 5 years of $1000 as;</p>
+
+<pre><code class="r">P &lt;- 1000
+r &lt;- 0.02
+t &lt;- 5
+A &lt;- P*(1+r*t)
+A
+</code></pre>
+
+<pre><code>## [1] 1100
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application - Link and Code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Try out the application on the RStudio shinyapps.io website:
+<a href="https://gurdalt.shinyapps.io/DevDataProducts">https://gurdalt.shinyapps.io/DevDataProducts</a></p>
+
+<p>To see the code for the application, visit github website:
+<a href="https://github.com/gurdalt/devdataprod-032-project">https://github.com/gurdalt/devdataprod-032-project</a></p>
+
+<p>Useful files in repo:</p>
+
+<p>server.R
+ui.R
+To execute the application and see the code in action, use:
+runApp(displayMode = &#39;showcase&#39;)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Application - Widgets'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Application - Operations and Output'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Application - Link and Code'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
